@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main
+{
+    public static List<int[]> findPairs(int[] arr){
+        
+        int sum= 19;
+        List<int[]> pairs = new ArrayList<>();
+        
+        for(int i=0; i<arr.length; i++){
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if((arr[i]+arr[j])==sum){
+                    pairs.add(new int[]{arr[i],arr[j]});
+                }
+                
+            }
+        }
+        
+        return pairs;
+    }
+    
+	public static void main(String[] args) {
+		
+		int[] arr = {8,12,11,6,13,7};
+
+		List<int[]> pairs = findPairs(arr);
+		
+		for(int[] res: pairs){
+		    System.out.println(res[0]+","+res[1]);
+		}
+	}
+}
